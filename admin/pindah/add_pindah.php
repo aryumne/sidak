@@ -49,8 +49,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Surat Pindah</label>
                 <div class="col-sm-6">
-                    <input type="file" class="form-control" id="file_pindah" name="file_pindah"
-                        placeholder="Alasan Pindah" required>
+                    <input type="file" class="form-control" id="file_pindah" name="file_pindah" required>
                 </div>
             </div>
 

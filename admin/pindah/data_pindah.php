@@ -27,11 +27,11 @@
                 <tbody>
 
                     <?php
-					$no = 1;
-					$sql = $koneksi->query("SELECT p.id_pend, p.nik, p.nama, d.tgl_pindah, d.alasan, d.id_pindah, d.filename_pindah, d.path_file from 
+                    $no = 1;
+                    $sql = $koneksi->query("SELECT p.id_pend, p.nik, p.nama, d.tgl_pindah, d.alasan, d.id_pindah, d.filename_pindah, d.path_file from 
 			  tb_pindah d inner join tb_pdd p on p.id_pend=d.id_pdd");
-					while ($data = $sql->fetch_assoc()) {
-					?>
+                    while ($data = $sql->fetch_assoc()) {
+                    ?>
 
                     <tr>
                         <td>
@@ -50,7 +50,6 @@
                             <?php echo $data['alasan']; ?>
                         </td>
                         <td>
-
                             <a href="<?= $data['path_file'] . $data['filename_pindah'] ?>"
                                 class="btn btn-sm btn-warning" target="_BLANK">Lihat surat</a>
 
@@ -69,8 +68,8 @@
                     </tr>
 
                     <?php
-					}
-					?>
+                    }
+                    ?>
                 </tbody>
                 </tfoot>
             </table>

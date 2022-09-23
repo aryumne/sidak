@@ -42,8 +42,7 @@ if (isset($_GET['kode'])) {
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Surat Pindah</label>
                 <div class="col-sm-6">
-                    <input type="file" class="form-control" id="file_pindah" name="file_pindah"
-                        placeholder="Alasan Pindah">
+                    <input type="file" class="form-control" id="file_pindah" name="file_pindah">
                 </div>
             </div>
 
@@ -104,43 +103,43 @@ if (isset($_POST['Ubah'])) {
 			Swal.fire({title: 'Ekstensi file harus (.pdf)',text: '',icon: 'error',confirmButtonText: 'OK'
 			}).then((result) => {if (result.value){
 				window.location = 'index.php?page=edit-pindah&kode=" . $data_cek['id_pindah'] . "';
-}
-})</script>";
+            }
+            })</script>";
         }
     } else {
         $sql_ubah = "UPDATE tb_pindah SET
-tgl_pindah='" . $_POST['tgl_pindah'] . "',
-alasan='" . $_POST['alasan'] . "'
-WHERE id_pindah='" . $_POST['id_pindah'] . "'";
+        tgl_pindah='" . $_POST['tgl_pindah'] . "',
+        alasan='" . $_POST['alasan'] . "'
+        WHERE id_pindah='" . $_POST['id_pindah'] . "'";
         $query_ubah = mysqli_query($koneksi, $sql_ubah);
         mysqli_close($koneksi);
 
         if ($query_ubah) {
             echo "<script>
-Swal.fire({
-    title: 'Ubah Data Berhasil',
-    text: '',
-    icon: 'success',
-    confirmButtonText: 'OK'
-}).then((result) => {
-    if (result.value) {
-        window.location = 'index.php?page=data-pindah';
-    }
-})
-</script>";
+            Swal.fire({
+                title: 'Ubah Data Berhasil',
+                text: '',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            }).then((result) => {
+                if (result.value) {
+                    window.location = 'index.php?page=data-pindah';
+                }
+            })
+            </script>";
         } else {
             echo "<script>
-Swal.fire({
-    title: 'Ubah Data Gagal',
-    text: '',
-    icon: 'error',
-    confirmButtonText: 'OK'
-}).then((result) => {
-    if (result.value) {
-        window.location = 'index.php?page=edit-pindah&kode=" . $data_cek['id_pindah'] . "';
-    }
-})
-</script>";
+            Swal.fire({
+                title: 'Ubah Data Gagal',
+                text: '',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            }).then((result) => {
+                if (result.value) {
+                    window.location = 'index.php?page=edit-pindah&kode=" . $data_cek['id_pindah'] . "';
+                }
+            })
+            </script>";
         }
     }
 }
