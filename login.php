@@ -41,7 +41,7 @@
 					<br>
 					<br>
 					<h5 class="text-uppercase">
-						<b>Sistem Informasi Data Kependudukan Desa Dindei</b>
+						<b>Sistem Informasi Data Kependudukan Desa DindeY</b>
 					</h5>
 					<br>
 				</center>

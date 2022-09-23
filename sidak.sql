@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 21, 2022 at 07:16 PM
+-- Generation Time: Sep 23, 2022 at 02:51 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -46,7 +46,9 @@ CREATE TABLE `tb_datang` (
   `nama_datang` varchar(255) NOT NULL,
   `jekel` enum('LK','PR') NOT NULL,
   `tgl_datang` date NOT NULL,
-  `pelapor` int(11) NOT NULL
+  `pelapor` int(11) NOT NULL,
+  `filename_datang` varchar(255) NOT NULL,
+  `path_file` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -147,7 +149,9 @@ CREATE TABLE `tb_pindah` (
   `id_pindah` int(11) NOT NULL,
   `id_pdd` int(11) NOT NULL,
   `tgl_pindah` date NOT NULL,
-  `alasan` varchar(255) NOT NULL
+  `alasan` varchar(255) NOT NULL,
+  `path_file` text NOT NULL,
+  `filename_pindah` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -173,7 +177,8 @@ ALTER TABLE `tb_datang`
 -- Indexes for table `tb_kk`
 --
 ALTER TABLE `tb_kk`
-  ADD PRIMARY KEY (`id_kk`);
+  ADD PRIMARY KEY (`id_kk`),
+  ADD UNIQUE KEY `no_kk` (`no_kk`);
 
 --
 -- Indexes for table `tb_lahir`
@@ -193,7 +198,8 @@ ALTER TABLE `tb_mendu`
 -- Indexes for table `tb_pdd`
 --
 ALTER TABLE `tb_pdd`
-  ADD PRIMARY KEY (`id_pend`);
+  ADD PRIMARY KEY (`id_pend`),
+  ADD UNIQUE KEY `nik` (`nik`);
 
 --
 -- Indexes for table `tb_pengguna`
@@ -228,13 +234,13 @@ ALTER TABLE `tb_datang`
 -- AUTO_INCREMENT for table `tb_kk`
 --
 ALTER TABLE `tb_kk`
-  MODIFY `id_kk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_kk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tb_lahir`
 --
 ALTER TABLE `tb_lahir`
-  MODIFY `id_lahir` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_lahir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tb_mendu`
@@ -246,7 +252,7 @@ ALTER TABLE `tb_mendu`
 -- AUTO_INCREMENT for table `tb_pdd`
 --
 ALTER TABLE `tb_pdd`
-  MODIFY `id_pend` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_pend` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `tb_pengguna`
@@ -258,7 +264,7 @@ ALTER TABLE `tb_pengguna`
 -- AUTO_INCREMENT for table `tb_pindah`
 --
 ALTER TABLE `tb_pindah`
-  MODIFY `id_pindah` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pindah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables

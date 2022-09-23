@@ -64,7 +64,7 @@
 				<li class="nav-item d-none d-sm-inline-block">
 					<a href="index.php" class="nav-link">
 						<font color="white">
-							<b>SISTEM INFORMASI DATA KEPENDUDUKAN DESA DINDEI</b>
+							<b>SISTEM INFORMASI DATA KEPENDUDUKAN DESA DINDEY</b>
 						</font>
 					</a>
 				</li>
