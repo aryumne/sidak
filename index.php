@@ -347,7 +347,7 @@ include "inc/koneksi.php";
             <div class="float-right d-none d-sm-block">
                 Copyright &copy;
                 <a target="_blank" href="https://sidakdindey.org">
-                    <strong>sidak-dindey</strong>
+                    <strong>SIDAK DINDEY</strong>
                 </a>
                 All rights reserved.
             </div>
